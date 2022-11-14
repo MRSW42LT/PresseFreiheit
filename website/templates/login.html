@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="mb-10"></div>
+<form method="POST" class="mt-5">
+
+  
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://static.miraheze.org/polcompballanarchywiki/3/34/Latinoancapball.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form>
+
+          <div class="divider d-flex align-items-center my-4">
+            <h2 class="text-center fw-bold mx-3 mb-0">Login</h2>
+          </div>
+
+          <!-- Email input -->
+          <div class="mb-3">
+            <div class="form-outline">
+              <input class="form-control form-control-lg" 
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+              class="form-control"
+              />
+              <label class="form-label" for="email">E-mail</label>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="mb-3">
+            <div class="form-outline">
+              <input class="form-control form-control-lg" 
+              type="text"
+              class="form-control"
+              id="password"
+              name="password"
+              class="form-control"
+              />
+              <label class="form-label" for="password">Password</label>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Doesn't have an account? <a href="#!"
+                class="link-danger">Register</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+   
+    <!-- Right -->
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+</section>
+</form>
+
+{% endblock %}
