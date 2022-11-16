@@ -31,3 +31,9 @@ def delete_note():
             db.session.commit()
             
     return jsonify({})
+
+
+@views.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    return render_template("profile.html", title="Profile", user=current_user)
