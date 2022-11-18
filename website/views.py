@@ -37,3 +37,7 @@ def delete_note():
 @login_required
 def profile():
     return render_template("profile.html", title="Profile", user=current_user)
+
+@views.route('/article/<int:article_id>', methods=['GET', 'POST'])
+def article(article_id):
+    return render_template("article.html", title="Article", user=current_user)
