@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    <div class="form-group">
+
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title"><br>
+
+        <label for="content">Content</label>
+
+        <div id="content-editor" name="content-editor" class="form-control">
+
+        </div>
+
+
+</form>
+
+{% endblock %}

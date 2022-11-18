@@ -22,6 +22,8 @@
     rel="stylesheet"
     />
 
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/classic/ckeditor.js"></script>
 </head>
 <body>
 
@@ -54,11 +56,21 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
     ></script>
-
+    
     <script
     type="text/javascript" 
     src="{{ url_for('static', filename='index.js') }}">
     </script>
 
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#content-editor' ) )
+                .then( editor => {
+                        console.log( editor );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from . import db
-from .models import Note
+from .models import Note, Article
 import json
 
 views = Blueprint('views', __name__)
@@ -37,6 +37,28 @@ def delete_note():
 @login_required
 def profile():
     return render_template("profile.html", title="Profile", user=current_user)
+
+
+@views.route('/add_article', methods=['GET', 'POST'])
+@login_required
+def add_article():
+    if request.method == 'POST':
+        title = request.form.get('title')
+        content = request.form.get('content-editor')
+        user = current_user
+        if len(title) < 1:  
+            flash('Please write a title', category='error')
+        elif len (content) <= 10:
+            flash('The article is too short!', category='error')
+        
+        else: #add article to database
+            new_article = Article(title=title, content=content, user=user)
+            db.session.add(new_article)
+            db.session.commit()
+            flash('Article added!', category='success')
+
+    return render_template("add_article.html", title="Write an article", user=current_user)
+
 
 @views.route('/article/<int:article_id>', methods=['GET', 'POST'])
 def article(article_id):
