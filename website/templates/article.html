@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+                <div class="mt-5">
+                    {% for article in articles %}
+                    <h1>{{ article.title }}</h1>
+                    <p>{{ article.content }}</p><br><br><hr>
+                    <p class="text-secondary">Author: {{ article.username }}</p>
+                    <p class="text-secondary">{{ article.date }}</p>
+                    <br>
+                {% endfor %}
+                </div>
+
+{% endblock %}
