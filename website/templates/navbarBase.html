@@ -4,13 +4,7 @@
     <div class="container">
       <!-- Navbar brand -->
       <a class="navbar-brand me-2" href="/">
-        <img
-          src="https://toppng.com/uploads/preview/handcuffs-svg-icon-free-handcuff-icon-11553386008hqwasbhcmy.png"
-          height="42"
-          alt="Logo"
-          loading="lazy"
-          style="margin-top: -1px;"
-        />
+        <i class="fas fa-eye" style="font-size: 32px;"></i>
       </a>
   
       <!-- Toggle button -->
@@ -31,7 +25,10 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/">Dashboard</a>
+            <a class="nav-link" href="{{ url_for('views.home') }}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="{{ url_for('views.add_article') }}">Write an article</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -61,7 +58,7 @@
             class="btn btn-dark px-2"
             href="https://github.com/denislindo2004/PresseFreiheit"
             role="button"
-            ><i class="fab fa-github"></i
+            >code audit <i class="fab fa-github"></i
           ></a>
         </div>
       </div>
