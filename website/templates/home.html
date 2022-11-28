@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<!-- Jumbotron -->
+<!-- 
 <div class="p-5 text-center bg-image rounded-3" style="
     height: 800px;
     font-family: serif;
@@ -18,51 +18,40 @@
     </div>
   </div>
 </div>
-<!-- Jumbotron -->
+-->
 
 
 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <h1 align="center">Articles</h1>
-                <!-- <ul class="list-group list group-flush" id="notes">
-                    {% for note in user.notes %}
-                    <li class="list-group-item">
-                        <button type="button" class="btn btn-danger btn-sm float-right delete-note" onClick="deleteNote({{ note.id }})">Delete</button>
+                <h1 align="center" class="mb-5">Articles</h1>
 
-                        {{ note.data }}
-                    </li>
-                    {% endfor %}
-                </ul> -->
-                
-                <div class="m-auto" style="width: 170px;">
-                    <button type="button" class="btn btn-primary me-3">
-                        <a class="text-white" href="{{ url_for('views.add_article') }}">Write an article</a>
-                    </button>
-                </div>
-
-
-                <ul class="list-group list-group-light m-auto" style="width: 600px;">
+                    
+                    <div class="row">
 
                     {% for article in articles %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/746/746993.png" alt="" style="width: 45px; height: 45px"
-                                class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">{{ article.username }}</p>
-                                <p class="text-muted mb-0">{{ article.title }}</p>
-                                <p class="text-muted mb-0">{{ article.date }}</p>
-                            </div>
-                            </div>
-                            <a class="btn btn-link btn-rounded btn-sm" href="/article/{{ article.id }}/" role="button">View</a>
-                        </li>
+                    <div class="col-md-4">
 
-                        <br>
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ article.title }}</h5>
+                              <p class="card-text" style="
+                                -webkit-line-clamp: 6;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                word-wrap: break-word;
+                                ">{{ article.content}}</p>
+                              <p class="text-muted  mb-2 mt-2">Escrito por {{ article.username }}</p>
+                              <a class="btn btn-primary btn-rounded " href="/article/{{ article.id }}/" role="button">View</a>
+                            </div>
+                        </div><br>
+
+                    </div>
                     {% endfor %}
+                    </div>
 
-                </ul>
                 <!--
                 <form method="POST">
                     <textarea name="note" id="note" cols="30" rows="10" class="form-control"></textarea>

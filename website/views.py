@@ -51,7 +51,10 @@ def profile():
 def add_article():
     if request.method == 'POST':
         title = request.form.get('title')
-        content = request.form.get('content-editor')
+        content = request.form.get('text')
+        #img = request.files['img']
+        #name = img.filename
+        #mimetype = img.mimetype
         user = current_user
         username = user.username
         if len(title) < 1:  

@@ -20,8 +20,11 @@ class User(db.Model, UserMixin):
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
-    content = db.Column(db.String(10000))
+    content = db.Column(db.Text)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User')
     username = db.Column(db.String(150))
+    #img = db.Column(db.db.String(10000000), unique=True, nullable=False)
+    #name = db.Column(db.String(250), nullable=False)
+    #mimetype = db.Column(db.String(150), nullable=False)

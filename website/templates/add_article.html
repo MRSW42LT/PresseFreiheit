@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{title}}{% endblock %}
 
+    
 {% block content %}
 <div class="container">
     <form method="POST">
@@ -9,8 +10,26 @@
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter title"><br>
     
+
+            <!--<input type="file" id="pic" name="pic" /> -->
+
+            <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+
             <label for="content-editor">Content</label>
-            <input type="text" class="form-control" id="content-editor" name="content-editor">
+            <textarea class="form-control" id="text" name="text" id="text" rows="20"></textarea>
+
+
+            <script>
+                ClassicEditor
+                        .create( document.querySelector( '#text' ) )
+                        .then( editor => {
+                                console.log( editor );
+                        } )
+                        .catch( error => {
+                                console.error( error );
+                        } );
+            </script>
+
     
             <div class="text-center">
                 <button type="submit" class="mt-4 btn btn-success input-block-level form-control"
@@ -19,6 +38,5 @@
             
     </form>
 </div>
-
 
 {% endblock %}
